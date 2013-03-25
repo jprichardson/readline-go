@@ -1,7 +1,7 @@
 golang: readline 
 =================
 
-[![Build Status](https://travis-ci.org/jprichardson/commander-go.png)](https://travis-ci.org/jprichardson/ommander-go)
+[![Build Status](https://travis-ci.org/jprichardson/readline-go.png)](https://travis-ci.org/jprichardson/readline-go)
 
 Easily read lines from a stream such as `stdin` for a file. Supports either `\n`, `\r\n`, or mixed.
 
