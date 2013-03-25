@@ -26,6 +26,7 @@ Usage
 import (
     "readline"
     "fmt"
+    "os"
 )
 
 readline.ReadLine(os.Stdin, func(line string) {
