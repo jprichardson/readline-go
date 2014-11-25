@@ -1,11 +1,11 @@
 package readline
 
 import (
-	"testing"
 	"strings"
+	"testing"
 )
 
-func TestReadLine (t *testing.T) {
+func TestReadLine(t *testing.T) {
 	s := "line1\nline2"
 	r := strings.NewReader(s)
 	e := ""
@@ -19,7 +19,7 @@ func TestReadLine (t *testing.T) {
 	}
 }
 
-func TestReadLine2 (t *testing.T) {
+func TestReadLine2(t *testing.T) {
 	s := "line1\r\nline2"
 	r := strings.NewReader(s)
 	e := ""
@@ -33,7 +33,7 @@ func TestReadLine2 (t *testing.T) {
 	}
 }
 
-func TestReadLine3 (t *testing.T) {
+func TestReadLine3(t *testing.T) {
 	s := "line1\r\nline2\n"
 	r := strings.NewReader(s)
 	e := ""
@@ -43,6 +43,20 @@ func TestReadLine3 (t *testing.T) {
 	})
 
 	if e != "line1\nline2\n" {
+		t.Fail()
+	}
+}
+
+func TestReadLine4(t *testing.T) {
+	s := "\n"
+	r := strings.NewReader(s)
+	e := ""
+
+	ReadLine(r, func(line string) {
+		e = line
+	})
+
+	if e != "" {
 		t.Fail()
 	}
 }
